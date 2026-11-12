@@ -186,12 +186,11 @@ footer {
 </footer>
 
 <script>
+
 function check() {
     const value = document
         .getElementById("answer")
-        .value
-        .trim()
-        .toUpperCase();
+        .value.trim().toUpperCase();
 
     const result = document.getElementById("result");
 
@@ -199,8 +198,17 @@ function check() {
         result.innerHTML =
         "file found<br><br>" +
         "THE FIRST ONE WAS NOT THE ORIGINAL.";
+
+    } else if (value === "0417") {
+        result.innerHTML =
+        '1 result found<br><br>' +
+        '<a style="color:#aaa" href="/archive/files/room_0417.pdf">' +
+        'room_0417.pdf</a><br>' +
+        '<span style="color:#666">DATE: 2017/04/17</span><br>' +
+        '<span style="color:#666">STATUS: recovered</span>';
+
     } else {
-        result.textContent = "no matching records.";
+        result.textContent = "未找到匹配文件";
     }
 }
 </script>
