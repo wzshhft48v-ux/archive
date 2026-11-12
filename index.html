@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>archive</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #aaa;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+header {
+    padding: 25px 7%;
+    border-bottom: 1px solid #222;
+}
+
+header a {
+    color: #aaa;
+    text-decoration: none;
+    margin-right: 22px;
+}
+
+header a:hover {
+    color: white;
+}
+
+main {
+    max-width: 760px;
+    margin: 75px auto;
+    padding: 0 25px;
+}
+
+h1 {
+    color: #ddd;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.section {
+    margin-top: 55px;
+}
+
+.record {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #1d1d1d;
+    color: #777;
+}
+
+.record a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.record a:hover {
+    color: white;
+}
+
+input {
+    background: transparent;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+}
+
+button {
+    background: transparent;
+    color: #888;
+    border: 1px solid #333;
+    padding: 11px 20px;
+    margin-top: 12px;
+}
+
+button:hover {
+    color: white;
+    border-color: #777;
+}
+
+#result {
+    margin-top: 20px;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+footer {
+    margin-top: 100px;
+    padding: 25px;
+    border-top: 1px solid #222;
+    color: #444;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#home">index</a>
+    <a href="#records">records</a>
+    <a href="#search">search</a>
+    <a href="#about">about</a>
+</header>
+
+<main id="home">
+
+    <h1>archive</h1>
+    <p>personal records and collected files.</p>
+    <p>last updated: unknown</p>
+
+    <div class="section" id="records">
+        <h1>records</h1>
+
+        <div class="record">
+            <a href="#record001">001 — room</a>
+            <span>unknown</span>
+        </div>
+
+        <div class="record">
+            <a href="#record002">002 — notes</a>
+            <span>2017</span>
+        </div>
+
+        <div class="record">
+            <a href="#record003">003 — personal</a>
+            <span>unknown</span>
+        </div>
+    </div>
+
+    <div class="section" id="record001">
+        <h1>001 — room</h1>
+        <p>There is nothing important here.</p>
+    </div>
+
+    <div class="section" id="record002">
+        <h1>002 — notes</h1>
+        <p>Some records may be incomplete.</p>
+    </div>
+
+    <div class="section" id="record003">
+        <h1>003 — personal</h1>
+        <p>Access restricted.</p>
+    </div>
+
+    <div class="section" id="search">
+        <h1>search archive</h1>
+        <p>enter a file identifier.</p>
+
+        <input id="answer" type="text" placeholder="">
+
+        <button onclick="check()">search</button>
+
+        <div id="result"></div>
+    </div>
+
+    <div class="section" id="about">
+        <h1>about</h1>
+        <p>
+        This archive contains miscellaneous records.
+        Some files may have been moved or deleted.
+        </p>
+    </div>
+
+</main>
+
+<footer>
+    archive / no further information
+</footer>
+
+<script>
+function check() {
+    const value = document
+        .getElementById("answer")
+        .value
+        .trim()
+        .toUpperCase();
+
+    const result = document.getElementById("result");
+
+    if (value === "DOPPELGANGER") {
+        result.innerHTML =
+        "file found<br><br>" +
+        "THE FIRST ONE WAS NOT THE ORIGINAL.";
+    } else {
+        result.textContent = "no matching records.";
+    }
+}
+</script>
+
+</body>
+</html>
